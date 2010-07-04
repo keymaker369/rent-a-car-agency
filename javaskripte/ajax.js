@@ -37,5 +37,4 @@ catch (e)
       document.getElementById("vreme").value=xmlHttp.responseText;
       }
     }
-
 }
