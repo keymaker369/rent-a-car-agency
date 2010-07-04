@@ -61,14 +61,14 @@ if ($_SESSION ['login'] == "go") {
           <div id="gbox-bgveliki">
             <div id="gbox-grdveliki">
 	          <div id="stelovanje">
-              <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
-              <p>RENT-A-CAR AGENCY "SEKE" se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograniÄ�enom kilometraÅ¾om i obezbeÄ‘enim Kasko osiguranjem gratis.</p>
-              <p>Izaberite rentakar vozilo izmeÄ‘u porodiÄ�nog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
-              <p>Takodje otvoreni smo za razliÄ�ite vrste dogovora, slobodno nas kontaktiraje.</p>
+              <h2>DOBRODOSLI NA NAS SAJT</h2>
+              <p>RENT-A-CAR AGENCY &quot;SEKE&quot; se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograničenom kilometražom i obezbedjenim Kasko osiguranjem gratis.</p>
+              <p>Izaberite rentakar vozilo izmedj‘u porodičnog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
+              <p>Takodje otvoreni smo za različite vrste dogovora, slobodno nas kontaktiraje.</p>
               
               <div id="featuresveliki">
-
-<h3>Raspored:</h3>
+                
+  <h3>Raspored:</h3>
 <br></br>
 <form name="form1" method="post" action="">
 	<select name="meseciID"	id="meseciID">
@@ -109,15 +109,15 @@ if (isset ( $_POST ["izaberiMesecID"] )) {
                   <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
                   <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
-                <p><a href="http://www.freewebsitetemplates.com">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>
                 <ul>
-                  <li><a href="http://www.templatebeauty.com">3 Opela Korsa</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com">Limuzina sa 13 vrata</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Minibus ya 12 osoba</a></li>
-                  <li><a href="http://www.justwebtemplates.com">... karting ...</a></li>
+                  <li><a href="http://localhost/seminarskiIT">3 Opela Korsa</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Limuzina sa 13 vrata</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Minibus ya 12 osoba</a></li>
+                  <li><a href="http://localhost/seminarskiIT">... karting ...</a></li>
                 </ul>
               </div>
               <div class="clear"> </div>

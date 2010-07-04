@@ -63,16 +63,16 @@ if ($_SESSION ['login'] == "go") {
               <div id="features">
                 <h2>NAÅ E USLUGE</h2>
                 <ul>
-                  <li><a href="http://www.freewebsitetemplates.com">Iznajmite rentakar vozilo</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Transfer kolima ili minibusem.</a></li>
-                  <li><a href="http://www.justwebtemplates.com">Specijalne cene</a></li>
-                  <li><a href="http://www.templatebeauty.com">Razgledanje grada Beograda</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Iznajmite rentakar vozilo</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Transfer kolima ili minibusem.</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Specijalne cene</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Razgledanje grada Beograda</a></li>
                 </ul>
                 <ul>
-                  <li><a href="http://www.templatebeauty.com">Dostava vozila</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com">ProduÅ¾enje usluge</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Dolazak po vozilo</a></li>
-                  <li><a href="http://www.justwebtemplates.com">Zamena vozila</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Dostava vozila</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">ProduÅ¾enje usluge</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Dolazak po vozilo</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Zamena vozila</a></li>
                 </ul>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
@@ -130,15 +130,15 @@ if ($_SESSION ['login'] == "go") {
                   <input type="text" class="text" name="q" value="" id="some_name" />
                   <input type="submit" value="go">
                 </form>
-                <p><a href="http://www.freewebsitetemplates.com">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>
                 <ul>
-                  <li><a href="http://www.templatebeauty.com">3 Opela Korsa</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com">Limuzina sa 13 vrata</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Minibus ya 12 osoba</a></li>
-                  <li><a href="http://www.justwebtemplates.com">... karting ...</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">3 Opela Korsa</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Limuzina sa 13 vrata</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Minibus ya 12 osoba</a></li>
+                  <li><a href="http://localhost/seminarskiIT">... karting ...</a></li>
                 </ul>
               </div>
               <div class="clear"> </div>

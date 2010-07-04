@@ -1,7 +1,13 @@
 <?php
+error_reporting(0);
 include '../dbbr/databasebroker.php';
 session_start ();
-proveriDugmeUlogujSeID();
+proveriDugmePretraziID();
+if($_SESSION['reload'] == 1){
+	header ( "Location: rezervacijeA.php" );
+	$_SESSION['reload'] = 0;	
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -24,6 +30,7 @@ proveriDugmeUlogujSeID();
           <ul>
             <li><a href="index.php">POCETNA</a></li>
             <li><a href="vozila.php">VOZILA</a></li>
+            <li><a href="prognoza.php">VREME</a></li>
             <?php
 if ($_SESSION ['login'] != "go") {
 	?>		
@@ -41,6 +48,8 @@ if ($_SESSION ['login'] == "go") {
 	} else {
 		?>
             <li><a href="rezervacijeA.php">REZERVACIJE</a></li>
+            <li><a href="korisnici.php">KORISNICI</a></li>
+            <li><a href="ubaciVozilo.php">DODAJ VOZILO</a></li>
             <?php
 	}
 	?>
@@ -52,10 +61,10 @@ if ($_SESSION ['login'] == "go") {
           </ul>
           <div class="clear"> </div>
         </div>
-        <div id="gboxveliki">
-          <div id="gbox-topveliki"> </div>
-          <div id="gbox-bgveliki">
-            <div id="gbox-grdveliki">
+        <div id="gbox">
+          <div id="gbox-top"> </div>
+          <div id="gbox-bg">
+            <div id="gbox-grd">
               <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
               <p>RENT-A-CAR AGENCY "SEKE" se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograniÄ�enom kilometraÅ¾om i obezbeÄ‘enim Kasko osiguranjem gratis.</p>
               <p>Izaberite rentakar vozilo izmeÄ‘u porodiÄ�nog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
@@ -78,17 +87,17 @@ if ($_SESSION ['login'] == "go") {
                 <p>&nbsp;</p>
 <h3>Vozila:</h3>
 <br></br>
-<?php 
-iscrtajTabeluSaVozilima();
+<?php
+napraviTabeluRezervacija ();
+proveriDugmeObrisiRez();
 ?>
-
 <div class="clear"> </div>
               </div>
               <div id="newsletter">
                 <h2>POTRAÅ½I VOZILO</h2>
-                <form action="" method="get" accept-charset="utf-8">
-                  <input type="text" class="text" name="q" value="" id="some_name" />
-                  <input type="submit" value="go">
+                <form action="" method="post" accept-charset="utf-8">
+                  <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
+                  <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
                 <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
               </div>
@@ -113,63 +122,85 @@ iscrtajTabeluSaVozilima();
 <div id="copyright"> &copy; Copyright information goes here. All rights reserved. </div>
 </body>
 </html>
-<?php 
-function iscrtajTabeluSaVozilima(){
-	$vozila = VratiSvaVozila::uradi ();
-$velicina = count ( $vozila );
-$tabela = "<table width=\"380\" border=\"1\"><tr><td>Model</td><td>Klasa</td><td>1d</td><td>2d</td><td>3-4d</td><td>5-6d</td><td>7d</td><td>14d</td></tr>";
 
-for($i = 0; $i < $velicina; $i ++) {
-	$tabela .= "<tr>";
-	$tabela .= "<td>";
-	$sifra = $vozila [$i]->getSifra ();
-	$model = $vozila [$i]->getModel ();
-	$tabela .= "<a href=\"../slikeVozila/$sifra.jpg\">$model</a></li>";
-	$tabela .= "</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getKlasa ();
-	$tabela .= "</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getDan1 ();
-	$tabela .= "E</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getDan2 ();
-	$tabela .= "E</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getDan34 ();
-	$tabela .= "E</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getdan56 ();
-	$tabela .= "E</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getdan7 ();
-	$tabela .= "E</td>";
-	$tabela .= "<td>";
-	$tabela .= $vozila [$i]->getdan14 ();
-	$tabela .= "E</td>";
-	$tabela .= "</tr>";
-}
-
-$tabela .= "</table>";
-echo $tabela;
-}
-
-function proveriDugmeUlogujSeID(){
-	if (isset ( $_POST ["ulogujSeID"] )) {
-		$k = new Korisnik ();
-		$k->setUsername ( $_POST ["usernameID"] );
-		$k->setPassword ( $_POST ["passwordID"] );
-		$provera = UlogujKorisnika::uradi ( $k );
-		if (UlogujKorisnika::uradi ( $k )) {
-			$_SESSION ['username'] = $_POST [usernameID];
-			$_SESSION ['password'] = $_POST [passwordID];
-			$_SESSION ['tip'] = $k->getTip ();
-			$_SESSION ['login'] = "go";
-			header ( "Location: index.php" );
-		} else {
-			$poruka = "Nije dobro unesen username i password!";
-			echo "<script language=\"javascript\">alert('$poruka');</script>";
+<?php
+function napraviTabeluRezervacija() {	
+	$korisnici = VratiSveKorisnike::uradi ();
+	for($i = 0; $i < count ( $korisnici ); $i ++) {
+		
+		$k = $korisnici [$i];
+		$rezervacije = VratiSveRezervacijeZaKorisnika::uradi( $k );
+		$tabela = $korisnici [$i]->getUsername () . "<br>";
+		$tabela .= "<form id=\"form$i\" name=\"form$i\" method=\"post\" action=\"\"><table width=\"380\" border=\"1\"><tr><td> Vozilo</td><td>od</td><td>do</td><td>cena</td><td></td></tr>";
+		for($k = 0; $k < count ( $rezervacije ); $k ++) {
+			$tabela .= "<tr>";
+			$v = new Vozilo ();
+			$v->setSifra ( $rezervacije [$k]->getSifra () );
+			VratiVozilo::uradi ( $v );
+			$tabela .= "<td>" . $v->getModel () . "</td>";
+			$tabela .= "<td>" . $rezervacije [$k]->getDatumOd () . "</td>";
+			$tabela .= "<td>" . $rezervacije [$k]->getDatumDo () . "</td>";
+			$cena = 0;
+			$dani = ($rezervacije [$k]->vratiDanDatumDo () - $rezervacije [$k]->vratiDanDatumOd ()) + 1;
+			switch ($dani) {
+				case 1 :
+					$cena = $v->getDan1 ();
+					break;
+				case 2 :
+					$cena = $v->getDan2 ();
+					break;
+				case 3 :
+					$cena = $v->getDan34 ();
+					break;
+				case 4 :
+					$cena = $v->getDan34 ();
+					break;
+				case 5 :
+					$cena = $v->getDan56 ();
+					break;
+				case 6 :
+					$cena = $v->getDan56 ();
+					break;
+				case 7 :
+					$cena = $v->getDan7 ();
+					break;
+				case 14 :
+					$cena = $v->getDan14 ();
+					break;
+			}
+			if ($dani > 7 and $dani < 14) {
+				$cena = $v->getDan14 ();
+			}
+			$tabela .= "<td>$cena</td>";
+			$tabela .= "<td><input type=\"submit\" name=\"obrisiID$i$k\" id=\"obrisiID$i$k\" value=\"Obrisi\" /></td>";
+			$tabela .= "</tr>";
 		}
+		$tabela .= "</table>";
+		echo $tabela . "</form><br>";
+	}
+}
+function proveriDugmeObrisiRez(){
+	$korisnici = VratiSveKorisnike::uradi ();
+	for($i = 0; $i < count ( $korisnici ); $i ++) {
+		$k = $korisnici [$i];
+		$rezervacije = VratiSveRezervacijeZaKorisnika::uradi( $k );
+		for($k = 0; $k < count ( $rezervacije ); $k ++) {
+			if (isset ( $_POST ["obrisiID$i$k"] )) {
+				ObrisiRezervaciju::uradi ( $rezervacije [$k] );
+				$_SESSION['reload'] = 1;
+				
+			}
+		}
+	}
+	header ( "Location: rezervacijeZ.php" );
+}
+
+function proveriDugmePretraziID(){
+	if (isset ( $_POST ["pretraziID"] )) {
+		
+		$_SESSION['parametarPretrage'] = $_POST ["poljePretrageID"];
+		
+		header ( "Location: vozilap.php" );
 	}
 }
 ?>

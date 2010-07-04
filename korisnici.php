@@ -59,23 +59,23 @@ if ($_SESSION ['login'] == "go") {
           <div id="gbox-top"> </div>
           <div id="gbox-bg">
             <div id="gbox-grd">
-              <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
-              <p>RENT-A-CAR AGENCY "SEKE" se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograniÄ�enom kilometraÅ¾om i obezbeÄ‘enim Kasko osiguranjem gratis.</p>
-              <p>Izaberite rentakar vozilo izmeÄ‘u porodiÄ�nog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
-              <p>Takodje otvoreni smo za razliÄ�ite vrste dogovora, slobodno nas kontaktiraje.</p>
+              <h2>DOBRODOSLI NA NAS SAJT</h2>
+              <p>RENT-A-CAR AGENCY &quot;SEKE&quot; se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograničenom kilometražom i obezbedjenim Kasko osiguranjem gratis.</p>
+              <p>Izaberite rentakar vozilo izmedj‘u porodičnog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
+              <p>Takodje otvoreni smo za različite vrste dogovora, slobodno nas kontaktiraje.</p>
               <div id="features">
-                <h2>NAÅ E USLUGE</h2>
+                <h2>NAŠE USLUGE</h2>
                 <ul>
-                  <li><a href="http://www.freewebsitetemplates.com">Iznajmite rentakar vozilo</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Transfer kolima ili minibusem.</a></li>
-                  <li><a href="http://www.justwebtemplates.com">Specijalne cene</a></li>
-                  <li><a href="http://www.templatebeauty.com">Razgledanje grada Beograda</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Iznajmite rentakar vozilo</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Transfer kolima ili minibusem.</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Specijalne cene</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Razgledanje grada Beograda</a></li>
                 </ul>
                 <ul>
-                  <li><a href="http://www.templatebeauty.com">Dostava vozila</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com">ProduÅ¾enje usluge</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Dolazak po vozilo</a></li>
-                  <li><a href="http://www.justwebtemplates.com">Zamena vozila</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">Dostava vozila</a></li>
+                  <li><a href="http://localhost/seminarskiIT/">ProduÅ¾enje usluge</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Dolazak po vozilo</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Zamena vozila</a></li>
                 </ul>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
@@ -92,15 +92,15 @@ echo vratiTabeluKorisnika ();
                   <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
                   <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
-                <p><a href="http://www.freewebsitetemplates.com">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>
                 <ul>
-                  <li><a href="http://www.templatebeauty.com">3 Opela Korsa</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com">Limuzina sa 13 vrata</a></li>
-                  <li><a href="http://www.freewebsitetemplates.com/forum/">Minibus ya 12 osoba</a></li>
-                  <li><a href="http://www.justwebtemplates.com">... karting ...</a></li>
+                  <li><a href="http://localhost/seminarskiIT">3 Opela Korsa</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Limuzina sa 13 vrata</a></li>
+                  <li><a href="http://localhost/seminarskiIT">Minibus ya 12 osoba</a></li>
+                  <li><a href="http://localhost/seminarskiIT">... karting ...</a></li>
                 </ul>
               </div>
               <div class="clear"> </div>

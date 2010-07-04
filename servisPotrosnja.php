@@ -12,7 +12,7 @@ $server->register ( "izracunaj", array ('kilometri' => 'xsd:double', 'potrosnja'
 
 function izracunaj($kilometri, $potrosnja) {
 
-	return ($kilometri * $potrosnja );
+	return (($kilometri/100) * $potrosnja );
 }
 
 $HTTP_RAW_POST_DATA = isset ( $HTTP_RAW_POST_DATA ) ? $HTTP_RAW_POST_DATA : '';
