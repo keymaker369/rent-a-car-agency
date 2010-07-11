@@ -60,7 +60,7 @@ if ($_SESSION ['login'] == "go") {
           <div id="gbox-bg">
             <div id="gbox-grd">
               <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
-              <h2>DOBRODOSLI NA NAS SAJT</h2>
+              <h2>DOBRODOŠLI NA NAŠ SAJT</h2>
               <p>RENT-A-CAR AGENCY &quot;SEKE&quot; se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograničenom kilometražom i obezbedjenim Kasko osiguranjem gratis.</p>
               <p>Izaberite rentakar vozilo izmedju porodičnog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
               <p>Takodje otvoreni smo za različite vrste dogovora, slobodno nas kontaktiraje.</p>
@@ -126,12 +126,12 @@ if ($_SESSION ['login'] == "go") {
 				<div class="clear"> </div>
               </div>
               <div id="newsletter">
-                <h2>POTRAÅ½I VOZILO</h2>
+                <h2>POTRAŽI VOZILO</h2>
                 <form action="" method="post" accept-charset="utf-8">
                   <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
                   <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
-                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Više detalja</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>

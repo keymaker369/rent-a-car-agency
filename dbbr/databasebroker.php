@@ -19,7 +19,7 @@ include 'sistemskeOperacije/postojiLiKorisnik.php';
 
 class DatabaseBroker {
 	public function DatabaseBroker() {
-		if (! $db = mysql_connect ( "localhost", "root", "" )) {
+		if (! $db = mysql_connect ( "localhost", "root", "nenad654321" )) {
 			die ( "<b>Spajanje na mysql server je bilo neuspesno</b>" );
 		}
 		if (! mysql_select_db ( "seminarski", $db )) {
@@ -122,6 +122,7 @@ class DatabaseBroker {
 	}
 	
 	public function pronadjiVozila($parametar) {
+		$parametar = mysql_real_escape_string( $parametar );
 		$upit = "select * from vozilo where model LIKE '%$parametar%';";
 		if (! $q = mysql_query ( $upit )) {
 			echo "Nastala je greska pri izvodenju upita vrati sva vozila<br>" . mysql_query ();
@@ -193,7 +194,7 @@ class DatabaseBroker {
 	}
 	
 	public function vratiVozilo(Vozilo $v) {
-		$sifra = $v->getSifra ();
+		$sifra = mysql_real_escape_string( $v->getSifra () );
 		$upit = "select * from vozilo where sifra = '$sifra';";
 		if (! $q = mysql_query ( $upit )) {
 			echo "Nastala je greska pri izvodenju upita vrati vozilo<br>" . mysql_query ();
@@ -232,8 +233,8 @@ class DatabaseBroker {
 	}
 	
 	public function vratiKorisnika(Korisnik $k) {
-		$username = $k->getUsername ();
-		$password = $k->getPassword ();
+		$username = mysql_real_escape_string( $k->getUsername () );
+		$password = mysql_real_escape_string( $k->getPassword () );
 		$upit = "select * from korisnik where username = '$username' and password = '$password';";
 		if (! $q = mysql_query ( $upit )) {
 			echo "Nastala je greska pri logovanju korisnika<br>" . mysql_query ();

@@ -70,7 +70,7 @@ if ($_SESSION ['login'] == "go") {
               <p>Izaberite rentakar vozilo izmeÄ‘u porodiÄ�nog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
               <p>Takodje otvoreni smo za razliÄ�ite vrste dogovora, slobodno nas kontaktiraje.</p>
               <div id="features">
-                <h2>NAÅ E USLUGE</h2>
+                <h2>NAŠE USLUGE</h2>
                 <ul>
                   <li><a href="http://localhost/seminarskiIT/">Iznajmite rentakar vozilo</a></li>
                   <li><a href="http://localhost/seminarskiIT">Transfer kolima ili minibusem.</a></li>
@@ -94,12 +94,12 @@ proveriDugmeObrisiRez();
 <div class="clear"> </div>
               </div>
               <div id="newsletter">
-                <h2>POTRAÅ½I VOZILO</h2>
+                <h2>POTRAŽI VOZILO</h2>
                 <form action="" method="post" accept-charset="utf-8">
                   <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
                   <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
-                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Više detalja</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>

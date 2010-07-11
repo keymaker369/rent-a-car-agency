@@ -66,12 +66,12 @@ if ($_SESSION ['login'] == "go") {
           <div id="gbox-top"> </div>
           <div id="gbox-bg">
             <div id="gbox-grd">
-              <h2>DOBRODOSLI NA NAS SAJT</h2>
+              <h2>DOBRODOŠLI NA NAŠ SAJT</h2>
               <p>RENT-A-CAR AGENCY &quot;SEKE&quot; se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograničenom kilometražom i obezbedjenim Kasko osiguranjem gratis.</p>
               <p>Izaberite rentakar vozilo izmedju porodičnog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
               <p>Takodje otvoreni smo za različite vrste dogovora, slobodno nas kontaktiraje.</p>
               <div id="features">
-                <h2>NAÅ E USLUGE</h2>
+                <h2>NAŠE USLUGE</h2>
                 <ul>
                   <li><a href="http://localhost/seminarskiIT/">Iznajmite rentakar vozilo</a></li>
                   <li><a href="http://localhost/seminarskiIT">Transfer kolima ili minibusem.</a></li>
@@ -144,7 +144,7 @@ if ($_SESSION ['login'] == "go") {
                   <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
                   <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
-                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Više detalja</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>
@@ -177,7 +177,7 @@ if ($_SESSION ['login'] != "go") {
                 <label>
                 <h2>
                 password:
-                <input type="text" name="passwordID" id="passwordID" />
+                <input type="password" name="passwordID" id="passwordID" />
                 </label>
                 <label>
                   <input type="submit" name="ulogujSeID" id="ulogujSeID" value="Uloguj se" />
@@ -219,12 +219,52 @@ function proveriDugmeUlogujSeID(){
 function proveriDugmeRegistrujSeID(){
 	if(isset($_POST["registrujSeID"])){
 		$korisnik = new Korisnik();
-		$korisnik->setUsername($_POST[textID]);
-		$korisnik->setPassword($_POST[passwordID]);
-		$korisnik->setIme($_POST[imeID]);
-		$korisnik->setPrezime($_POST[prezimeID]);
-		$korisnik->setDatumrodj($_POST[datumRodjID]);
-		$korisnik->setEmail($_POST[emailID]);
+		if ( ctype_alnum($_POST[textID])){
+			$korisnik->setUsername($_POST[textID]);
+		}else{
+			$poruka = "Nije dobro unesen username!";
+			echo "<script language=\"javascript\">alert('$poruka');</script>";
+			return;
+		}
+		
+		if ( ctype_alnum($_POST[passwordID])){
+			$korisnik->setPassword($_POST[passwordID]);
+		}else{
+			$poruka = "Nije dobro unesen password!";
+			echo "<script language=\"javascript\">alert('$poruka');</script>";
+			return;
+		}
+		
+		if ( ctype_alpha($_POST[imeID])){
+			$korisnik->setIme($_POST[imeID]);
+		}else{
+			$poruka = "Nije dobro uneseno ime!";
+			echo "<script language=\"javascript\">alert('$poruka');</script>";
+			return;
+		}
+		
+		if ( ctype_alpha($_POST[prezimeID])){
+			$korisnik->setPrezime($_POST[prezimeID]);
+		}else{
+			$poruka = "Nije dobro uneseno prezime!";
+			echo "<script language=\"javascript\">alert('$poruka');</script>";
+			return;
+		}
+		
+		if(proverDatum($_POST[datumRodjID])){
+			$korisnik->setDatumrodj($_POST[datumRodjID]);
+		}else{
+			$poruka = "Nije dobro unesen datum!";
+			echo "<script language=\"javascript\">alert('$poruka');</script>";
+			return;
+		}
+
+		$email = $_POST[emailID];
+		
+		if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$korisnik->setEmail($_POST[emailID]);
+		}
+
 		$korisnik->setTip($_POST[tipID]);
 		
 		DodajKorisnika::uradi($korisnik);
@@ -237,6 +277,15 @@ function proveriDugmePretraziID(){
 		$_SESSION['parametarPretrage'] = $_POST ["poljePretrageID"];
 		
 		header ( "Location: vozilap.php" );
+	}
+}
+function proverDatum($datum){
+	if(empty($datum))
+		return false;
+	if (($timestamp = strtotime($datum)) === false) {
+    	return false;
+	} else {
+    	return true;
 	}
 }
 ?>

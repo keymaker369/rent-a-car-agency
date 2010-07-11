@@ -47,6 +47,6 @@ function proveri() {
 		return false;
 	}
 
-	var ocesNeces = confirm("Ispravno ste uneli sve podatke, da li nastavljate sa registracijom");
-	return ocesNeces;
+//var ocesNeces = confirm("Ispravno ste uneli sve podatke, da li nastavljate sa registracijom");
+//	return ocesNeces;
 }

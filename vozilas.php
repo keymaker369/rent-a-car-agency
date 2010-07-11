@@ -60,7 +60,7 @@ if ($_SESSION ['login'] == "go") {
           <div id="gbox-top"> </div>
           <div id="gbox-bg">
             <div id="gbox-grd">
-              <h2>DOBRODOSLI NA NAS SAJT</h2>
+              <h2>DOBRODOŠLI NA NAŠ SAJT</h2>
               <p>RENT-A-CAR AGENCY &quot;SEKE&quot; se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograničenom kilometražom i obezbedjenim Kasko osiguranjem gratis.</p>
               <p>Izaberite rentakar vozilo izmedju porodičnog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
               <p>Takodje otvoreni smo za različite vrste dogovora, slobodno nas kontaktiraje.</p>
@@ -105,7 +105,7 @@ proveriDugmeSortirajPoModeluID();
                   <input type="text" class="text" name="poljePretrageID" value="" id="poljePretrageID" />
                   <input type="submit" name="pretraziID" id="pretraziID" value="go">
                 </form>
-                <p><a href="http://localhost/seminarskiIT/">Click here for details</a></p>
+                <p><a href="http://localhost/seminarskiIT/">Više detalja</a></p>
               </div>
               <div id="events">
                 <h2>USKORO U PONUDI</h2>
@@ -138,7 +138,7 @@ if ($_SESSION ['login'] != "go") {
                 <label>
                 <h2>
                 password:
-                <input type="text" name="passwordID" id="passwordID" />
+                <input type="password" name="passwordID" id="passwordID" />
                 </label>
                 <label>
                   <input type="submit" name="ulogujSeID" id="ulogujSeID" value="Uloguj se" />

@@ -61,12 +61,12 @@ if ($_SESSION ['login'] == "go") {
           <div id="gbox-top"> </div>
           <div id="gbox-bg">
             <div id="gbox-grd">
-              <h2>DOBRODOSLI NA NAS SAJT</h2>
+              <h2>DOBRODOŠLI NA NAŠ SAJT</h2>
               <p>RENT-A-CAR AGENCY "SEKE" se nalazi u Beogradu, Srbija, i nudi pun spektar usluga renta kar i minibus transfera sa neograničenom kilometražom i obezbedjenim Kasko osiguranjem gratis.</p>
               <p>Izaberite rentakar vozilo izmedju porodičnog vozila tipa Skoda Octavia karavan, Nove Astre H, Automatik vozila, gradskog Yuga ... Mi besplatno dostavljamo automobil do aerodroma (Aerodrom Beograd).</p>
               <p>Takodje otvoreni smo za različite vrste dogovora, slobodno nas kontaktiraje.</p>
               <div id="features">
-                <h2>NAÅ E USLUGE</h2>
+                <h2>NAŠE USLUGE</h2>
                 <ul>
                   <li><a href="http://localhost/seminarskiIT/">Iznajmite rentakar vozilo</a></li>
                   <li><a href="http://localhost/seminarskiIT">Transfer kolima ili minibusem.</a></li>
